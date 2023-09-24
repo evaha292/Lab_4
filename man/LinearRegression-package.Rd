@@ -1,5 +1,5 @@
-\name{LinearRegression-package}
-\alias{LinearRegression-package}
+\name{LinearRegression}
+\alias{LinearRegression}
 \alias{LinearRegression}
 \docType{package}
 \title{
@@ -9,26 +9,12 @@
 \packageDescription{LinearRegression}
 }
 \details{
+A package to handle linear regression models
 
-The DESCRIPTION file:
-\packageDESCRIPTION{LinearRegression}
-\packageIndices{LinearRegression}
-~~ An overview of how to use the package, including the most important functions ~~
 }
 \author{
 \packageAuthor{LinearRegression}
 
 Maintainer: \packageMaintainer{LinearRegression}
 }
-\references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
-}
+

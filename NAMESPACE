@@ -1,1 +1,2 @@
 export("linreg")
+import("ggplot2","stringr")
