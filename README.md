@@ -5,3 +5,7 @@
 
 Files for Lab-4 assignment in R programming.
 
+
+To install the package ensure that build_vignettes is set to TRUE. So: 
+
+install_github("Siddhesh19991/Lab_4",build_vignettes = TRUE) 
