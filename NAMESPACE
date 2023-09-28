@@ -1,2 +1,2 @@
 export("linreg")
-import("ggplot2","stringr")
+import("ggplot2","stringr","gridExtra")

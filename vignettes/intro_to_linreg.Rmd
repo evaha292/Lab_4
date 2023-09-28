@@ -1,0 +1,68 @@
+---
+title: "Introduction to the Linear Regression Model"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to the Linear Regression Model}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(LinearRegression)
+```
+
+Creating a linear regression model using the "Iris" dataset 
+
+"linreg" takes 2 inputs, the first is the formula and the second is the dataset. 
+
+As soon as you create an object from it, it automatically initializes by filling up multiple field through calculations and using the given formula and dataset. 
+
+"l1" is an object of the class "linreg" which has these different fields.
+
+```{r}
+l1<-linreg(formula = Petal.Length~Species, data = iris)
+```
+
+There are also different methods available which are used to return the values of the different fields, we shall showcase each of them
+
+print() will print out the coefficients and coefficient names
+
+```{r}
+l1$print()
+```
+
+plot() outputs 2 plots 1) Residuls vs Fitted Values and 2) Standardized Residuals  vs Fitted Values 
+```{r}
+l1$plot()
+```
+
+resid()  returns the vector of the residuals 
+
+```{r}
+l1$resid()
+```
+
+pred() returns the predicted values
+
+```{r}
+l1$pred()
+```
+
+coef()  returns the coefficients as a named vector
+```{r}
+l1$coef()
+```
+
+summary() presents the coefficients with their standard error, t-value and p-value as well as the estimate of ˆσ and the degrees
+of freedom in the model.
+
+```{r}
+l1$summary()
+```
