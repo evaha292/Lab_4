@@ -137,7 +137,7 @@
             
   
   #l1<-linreg(formula = Petal.Length~Species + Petal.Width, data = iris)
-  l1<-linreg(formula = Petal.Length~Sepal.Width + Sepal.Length, data = iris)
+  #l1<-linreg(formula = Petal.Length~Sepal.Width + Sepal.Length, data = iris)
   
-  l1<-linreg(formula = Petal.Length~Species + Petal.Width, data = iris)
+  #l1<-linreg(formula = Petal.Length~Species + Petal.Width, data = iris)
   
