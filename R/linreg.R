@@ -86,10 +86,10 @@
                           names(c)<-c("Residuals","Fitted")
                           e<- as.character(formula)
                           e<-paste(e[2],"~",e[3])
-                          f<- stringr::str_glue("Fitted values linreg({e})", .sep = "\n")
+                          f<- stringr::str_glue("Fitted values", "linreg({e})", .sep = "\n")
                           z<-sqrt(abs(scale(residuals)))
                           plot1<-ggplot2::ggplot(c,aes(Fitted,Residuals))+geom_point()+stat_summary(fun = "median", geom = "line", aes(group = 1), color = "red")+labs(title="Residuals vs Fitted", x = f)
-                          plot2<-ggplot2::ggplot(c,aes(Fitted,z))+geom_point()+stat_summary(fun = "mean", geom = "line", aes(group = 1), color = "red")+labs(title="Standardized Residuals vs Fitted", x = f, y = "Standardized Residuals")
+                          plot2<-ggplot2::ggplot(c,aes(Fitted,z))+geom_point()+stat_summary(fun = "mean", geom = "line", aes(group = 1), color = "red")+labs(title="Standardized Residuals vs Fitted", x = f, y = expression(sqrt("Standardized Residuals")))
                           gridExtra::grid.arrange(plot1,plot2,ncol=2)
                         },
                         resid = function(){
@@ -139,5 +139,5 @@
   #l1<-linreg(formula = Petal.Length~Species + Petal.Width, data = iris)
   #l1<-linreg(formula = Petal.Length~Sepal.Width + Sepal.Length, data = iris)
   
-  #l1<-linreg(formula = Petal.Length~Species + Petal.Width, data = iris)
+  l1<-linreg(formula = Petal.Length~Species + Petal.Width, data = iris)
   
