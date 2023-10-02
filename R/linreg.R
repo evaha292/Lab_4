@@ -62,7 +62,12 @@
                           tvalues <<- coeff/sqrt(diag(varcoeff))
                           f<- abs(tvalues)
                           pvalues <<- 2*(pt(f,dof,lower.tail=FALSE))
-                          #how to find p-values using pt()?Is that something that needs to be calculated?  
+                          #how to find p-values using pt()?Is that something that needs to be calculated?
+                          
+                          
+                          
+                          
+                          
                         },
                         print = function(){
                           #a <- as.vector(coeff)
@@ -91,6 +96,28 @@
                           plot1<-ggplot2::ggplot(c,aes(Fitted,Residuals))+geom_point()+stat_summary(fun = "median", geom = "line", aes(group = 1), color = "red")+labs(title="Residuals vs Fitted", x = f)
                           plot2<-ggplot2::ggplot(c,aes(Fitted,z))+geom_point()+stat_summary(fun = "mean", geom = "line", aes(group = 1), color = "red")+labs(title="Standardized Residuals vs Fitted", x = f, y = expression(sqrt("Standardized Residuals")))
                           gridExtra::grid.arrange(plot1,plot2,ncol=2)
+                          #Theme
+                          theme_classic<-function(){
+                            theme_light() %+replace%        
+                              theme(
+                                text=element_text(family="montserrat")
+                                plot.title=element_textbox_simple(family = "patua-one", size=28,
+                                                                   lineheight=1,
+                                                                   margin=margin(b=10)),
+                                
+                                plot.title.position="plot",
+                                plot.caption=element_markdown(hjust=0, color="white",
+                                                              lineheight = 1.5,
+                                                              margin=margin(t=10)),
+                                plot.caption.position= "plot",
+                                axis.title.y= element_text(color="white"),
+                                axist.text.y=element_text(color="white"),
+                                panel.background=element_rect(fill="#17c7d2"),
+                                plot.background=element_rect(fill="#17c7d2"),
+                                legend.background=element_rect(fill="#17c7d2")
+                              )
+                          }
+                        
                         },
                         resid = function(){
                           return(as.vector(residuals))
